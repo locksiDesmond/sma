@@ -1,0 +1,39 @@
+.register {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+  background-color: #4baec6;
+  flex-direction: column;
+}
+.register > p {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.register-div {
+  padding: 2rem;
+  border-radius: 3.4rem 0 0 0;
+  padding-bottom: 4rem;
+  background-color: #173f58;
+}
+.register-div label {
+  padding-top: 1.5rem;
+}
+.register-div form {
+  width: 98%;
+}
+.register-div {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .register {
+    align-items: center;
+    padding-bottom: 3rem;
+  }
+  .register-div {
+    border-radius: 1.5rem;
+    padding-bottom: 3rem;
+    width: 50%;
+  }
+}
