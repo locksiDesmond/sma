@@ -1,9 +1,8 @@
 import React from "react";
-import "./App.css";
-import CourseRegister from "./components/CourseRegister/CourseRegister";
+import Routes from "./page routes/Routes";
 
 function App() {
-  return <CourseRegister />;
+  return <Routes />;
 }
 
 export default App;
