@@ -1,29 +1,100 @@
 import React, { useState, useEffect } from "react";
 import Sma from "./../../layout/Sma";
 import SelectClass from "../hooks/SelectClass";
-import SelectDepartment from "./../hooks/SelectDepartment";
 import SelectSubjects from "./../hooks/SelectSubjects";
+import SelectDepartment from "./../hooks/SelectDepartment";
 import { useLocation, useHistory } from "react-router";
+import { Redirect } from "react-router-dom";
+const Classes = require("../../lib/Classes.js");
 
 export default function CourseRegister() {
   const [level, setLevel] = useState("");
   const [department, setDepartment] = useState("");
   const [subjects, setSubjects] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [done, setDone] = useState(false);
+  const [me, setMe] = useState({});
+
   const history = useHistory();
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
+  const previousData = location.state;
+
   useEffect(() => {
     if (!location.state) {
       history.replace(from);
     }
-  }, [location.state]);
-  const handleSubmit = (e) => {
+  }, [location.state, from, history]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({ level, department, subjects });
+    if (level && subjects) {
+      const isSenior = () => {
+        switch (level) {
+          case "ss1":
+          case "ss2":
+          case "ss3":
+            return true;
+          default:
+            return false;
+        }
+      };
+      const newSubjects = isSenior()
+        ? Classes.senior.department[department].filter(
+            (item) => item.isCompulsory
+          )
+        : Classes.junior[0].subjects.filter((item) => item.isCompulsory);
+      const combinedSubjects = [...newSubjects, ...subjects];
+      // const body {level , subjects,}
+      try {
+        const body = {
+          level,
+          department: department || "a junior",
+          subjects: combinedSubjects,
+          ...previousData,
+        };
+        setMe(body);
+        const response = await fetch(
+          "https://peaceful-mountain-33242.herokuapp.com/done",
+          {
+            method: "POST",
+            mode: "cors",
+            cache: "no-cache",
+            credentials: "same-origin",
+            body: JSON.stringify(body),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        const data = await response.json();
+        const { error } = data;
+        if (error) {
+          const message = error.details[0].message;
+          setError(message);
+          setLoading(false);
+        } else {
+          setDone(true);
+        }
+      } catch (err) {
+        console.log(err);
+        setLoading(false);
+      }
+    }
   };
   return (
     <Sma title="Course Registration">
       <form onSubmit={handleSubmit}>
+        {done && (
+          <Redirect
+            to={{
+              pathname: "/",
+              state: me,
+            }}
+          />
+        )}
+
         <div className="form-group">
           <label htmlFor="class">Class</label>
           <SelectClass class={level} onChange={(value) => setLevel(value)} />
@@ -44,8 +115,13 @@ export default function CourseRegister() {
             onChange={(value) => setSubjects(value)}
           />
         </div>
+        {error && <span style={{ color: "red" }}>{error}</span>}
         <div className="course-r-btn">
-          <button className="btn bd-10 btn-light-blue">Submit</button>
+          {!loading ? (
+            <button className="btn bd-10 btn-light-blue">Submit</button>
+          ) : (
+            <span>Loading ....</span>
+          )}
         </div>
       </form>
     </Sma>

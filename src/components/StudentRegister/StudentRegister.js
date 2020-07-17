@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Sma from "./../../layout/Sma";
-import { Route, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 export default function StudentRegister() {
   const [authenticated, setAuthenticated] = useState(false);
   const [parentName, setParentName] = useState({ firstname: "", lastname: "" });
@@ -63,7 +63,10 @@ export default function StudentRegister() {
     <Sma title="Student registration">
       {authenticated && (
         <Redirect
-          to={{ pathname: "/registercourse", state: { value: "hey" } }}
+          to={{
+            pathname: "/registercourse",
+            state: { email, studentName, parentName, address, phoneNumber },
+          }}
         />
       )}
       <form onSubmit={handleSubmit} className="form">

@@ -37,7 +37,7 @@ const subjects = [
     { title: "CRS/IRK", isCompulsory: true },
     { title: "Yoruba", isCompulsory: true },
     { title: "Computer science", isCompulsory: true },
-    { title: "Music", isCompulsory: true },
+    { title: "Music", isCompulsory: false },
     { title: "P.H.E", isCompulsory: true },
   ],
   Classes = {
