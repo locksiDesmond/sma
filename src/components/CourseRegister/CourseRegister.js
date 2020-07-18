@@ -4,6 +4,8 @@ import SelectClass from "../hooks/SelectClass";
 import SelectSubjects from "./../hooks/SelectSubjects";
 import SelectDepartment from "./../hooks/SelectDepartment";
 import { useLocation, useHistory } from "react-router";
+import { css } from "@emotion/core";
+import ClipLoader from "react-spinners/ClipLoader";
 import { Redirect } from "react-router-dom";
 const Classes = require("../../lib/Classes.js");
 
@@ -14,7 +16,12 @@ export default function CourseRegister() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [done, setDone] = useState(false);
-  const [me, setMe] = useState({});
+  //loading css
+  const override = css(`
+    display: block;
+    margin: 0 auto;
+    border-color:#4BAEC6;
+  `);
 
   const history = useHistory();
   const location = useLocation();
@@ -54,7 +61,6 @@ export default function CourseRegister() {
           subjects: combinedSubjects,
           ...previousData,
         };
-        setMe(body);
         const response = await fetch(
           "https://peaceful-mountain-33242.herokuapp.com/done",
           {
@@ -119,7 +125,12 @@ export default function CourseRegister() {
           {!loading ? (
             <button className="btn bd-10 btn-light-blue">Submit</button>
           ) : (
-            <span>Loading ....</span>
+            <ClipLoader
+              css={override}
+              size={40}
+              color={"blue"}
+              loading={loading}
+            />
           )}
         </div>
       </form>

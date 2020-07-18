@@ -1,3 +1,7 @@
+html,
+body {
+  overflow-x: hidden;
+}
 .home {
   color: #000;
   display: flex;
@@ -28,6 +32,12 @@
   padding-left: 1.5rem;
   text-align: center;
 }
+@media (max-width: 767px) {
+  .board img {
+    width: 84%;
+  }
+}
+
 .btn-outline-dark {
   border: 1px solid #1f211f !important;
   color: #1f211f;

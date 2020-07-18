@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Sma from "./../../layout/Sma";
 import { Redirect } from "react-router-dom";
+import ClipLoader from "react-spinners/ClipLoader";
+import { css } from "@emotion/core";
 export default function StudentRegister() {
   const [authenticated, setAuthenticated] = useState(false);
   const [parentName, setParentName] = useState({ firstname: "", lastname: "" });
@@ -12,6 +14,11 @@ export default function StudentRegister() {
   });
   const [phoneNumber, setPhoneNumber] = useState("");
   const [address, setAddress] = useState({ address: "", city: "" });
+  const override = css(`
+    display: block;
+    margin: 0 auto;
+    border-color:#4BAEC6;
+  `);
   const [error, setError] = useState("");
   const handleSubmit = async (e) => {
     setLoading(true);
@@ -189,7 +196,12 @@ export default function StudentRegister() {
           {!loading ? (
             <button className="btn left btn-light-blue rounded"> Next</button>
           ) : (
-            <span>Loading</span>
+            <ClipLoader
+              css={override}
+              size={40}
+              color={"blue"}
+              loading={loading}
+            />
           )}
         </div>
       </form>

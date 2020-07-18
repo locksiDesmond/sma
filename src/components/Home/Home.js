@@ -1,14 +1,8 @@
 import React from "react";
-import { useLocation, useHistory } from "react-router";
 import "./home.css";
 import welcome from "../../images/svg/welcome.svg";
 import { Link } from "react-router-dom";
 export default function Home() {
-  //history state
-  const history = useHistory();
-  const location = useLocation();
-  // register state
-  let state = location.state;
   return (
     <div className="home">
       <div className="board">

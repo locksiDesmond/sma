@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./dashboard.css";
+import ClipLoader from "react-spinners/ClipLoader";
 import Axios from "axios";
 import { Link } from "react-router-dom";
 import { getDateMonthAndYearInString } from "./../../lib/handleDates";
+import { css } from "@emotion/core";
 export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [students, setStudents] = useState([]);
+
+  //loading css
+  const override = css(`
+    display: block;
+    margin: 0 auto;
+    border-color:#4BAEC6;
+  `);
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await Axios.get(
@@ -49,7 +59,12 @@ export default function Dashboard() {
               </div>
             ))
           ) : (
-            <p>Loading...</p>
+            <ClipLoader
+              css={override}
+              size={40}
+              color={"blue"}
+              loading={true}
+            />
           )}
         </div>
       </div>
