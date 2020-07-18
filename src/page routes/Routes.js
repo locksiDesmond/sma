@@ -10,9 +10,6 @@ export default function Routes() {
     <Router>
       <React.Fragment>
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
           <Route path="/register">
             <StudentRegister />
           </Route>
@@ -21,6 +18,9 @@ export default function Routes() {
           </Route>
           <Route path="/dashboard">
             <Dashboard />
+          </Route>
+          <Route path="/">
+            <Home />
           </Route>
         </Switch>
       </React.Fragment>
