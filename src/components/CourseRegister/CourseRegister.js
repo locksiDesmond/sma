@@ -89,8 +89,7 @@ export default function CourseRegister() {
         {done && (
           <Redirect
             to={{
-              pathname: "/",
-              state: me,
+              pathname: "/dashboard",
             }}
           />
         )}

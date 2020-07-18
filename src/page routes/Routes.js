@@ -4,21 +4,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./routes.css";
 import StudentRegister from "./../components/StudentRegister/StudentRegister";
 import CourseRegister from "./../components/CourseRegister/CourseRegister";
+import Dashboard from "./../components/Dashboard/Dashboard";
 export default function Routes() {
   return (
     <Router>
       <React.Fragment>
-        <nav className="nav">
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/register">Enroll</Link>
-            </li>
-          </ul>
-        </nav>
-
         <Switch>
           <Route exact path="/">
             <Home />
@@ -28,6 +18,9 @@ export default function Routes() {
           </Route>
           <Route path="/registercourse">
             <CourseRegister />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
           </Route>
         </Switch>
       </React.Fragment>
