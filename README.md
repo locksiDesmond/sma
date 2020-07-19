@@ -1,6 +1,6 @@
 # Sma (School Management App)
-homepage: https://locksidesmond.github.io/SMA/
-Backend Url: https://peaceful-mountain-33242.herokuapp.com/
+homepage: https://locksidesmond.github.io/SMA/   
+Backend Url: https://peaceful-mountain-33242.herokuapp.com/  
 Backend repo: https://github.com/locksiDesmond/SMA-backend
 
 ## Feature
