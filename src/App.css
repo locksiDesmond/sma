@@ -111,12 +111,7 @@ button {
   flex-flow: row wrap;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  /* align-items: center; */
   margin-bottom: 0;
-}
-.form-group label {
-  margin-bottom: 0.7rem;
-  font-weight: 600;
 }
 .form-group {
   display: flex;
@@ -137,10 +132,20 @@ button {
   flex-direction: column-reverse;
   display: flex;
 }
-.form-with-label > span {
+.form-with-label > label {
   display: block;
   font-size: 0.8rem;
   margin: 0.4rem 0;
+}
+.register-div label {
+  padding-top: 0rem !important;
+}
+.register-div p,
+.form-group > label {
+  font-weight: 600;
+}
+.form-group > label {
+  margin: 1rem 0;
 }
 @media (min-width: 768px) {
   .form-inline {
@@ -150,7 +155,7 @@ button {
     display: flex;
     flex-direction: column;
   }
-  .form-with-label > span {
+  .form-with-label > label {
     margin: 0.4rem 0;
   }
 }
@@ -159,6 +164,7 @@ button {
     width: 85%;
   }
 }
+
 /*  buttons */
 .btn {
   display: inline-block;
@@ -217,7 +223,7 @@ button {
   border-radius: 0.3rem;
 }
 .btn-light-blue {
-  color: #81d2ff;
+  color: #173f58;
   background-color: #ffff;
   border-color: #fff;
 }
@@ -244,13 +250,6 @@ button {
   background-color: #81d2ff;
   border-color: #81d2ff;
 }
-
-/* .rounded {
-  border-radius: 10px;
-} */
-
-/* select  */
-
 select {
   margin: 0;
   font-family: inherit;
@@ -265,9 +264,6 @@ select {
 select {
   text-transform: none;
 }
-/* select.form-control:not([size]):not([multiple]) {
-  height: calc(2.25rem + 2px);
-} */
 
 select.form-control:focus::-ms-value {
   color: #495057;

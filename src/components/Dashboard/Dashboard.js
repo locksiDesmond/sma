@@ -37,6 +37,7 @@ export default function Dashboard() {
       </div>
       <div className="dashboard">
         <div className="dashboard-table">
+          <h3>Students Registered</h3>
           <div className="title">
             <p>Student</p>
             <p>class</p>

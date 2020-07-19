@@ -38,6 +38,8 @@
   background-color: #f5f6fa;
   border-radius: 5px;
   margin-bottom: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 .items:nth-child(even) {
   background-color: #c4dde4;
@@ -45,9 +47,11 @@
 .items:hover {
   background-color: #173f58;
   color: #fff;
+  cursor: pointer;
 }
 .name {
   text-transform: capitalize;
+  font-weight: 600;
 }
 .web {
   display: none;

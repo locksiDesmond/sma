@@ -36,6 +36,7 @@ export default function CourseRegister() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     if (level && subjects) {
       const isSenior = () => {
         switch (level) {
@@ -62,7 +63,7 @@ export default function CourseRegister() {
           ...previousData,
         };
         const response = await fetch(
-          "https://peaceful-mountain-33242.herokuapp.com/done",
+          "https://peaceful-mountain-33242.herokuapp.com/create",
           {
             method: "POST",
             mode: "cors",

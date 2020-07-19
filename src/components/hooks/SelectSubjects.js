@@ -28,7 +28,7 @@ export default function SelectSubjects(props) {
         .map((item) => ({ label: item.title, value: item.title }));
   return (
     <React.Fragment>
-      <label>choose atleast 1 optional subjects</label>
+      <label>Choose atleast 1 optional subjects</label>
       <Select
         options={level}
         onChange={handleChange}

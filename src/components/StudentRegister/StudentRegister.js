@@ -78,7 +78,7 @@ export default function StudentRegister() {
       )}
       <form onSubmit={handleSubmit} className="form">
         <div className="form-group">
-          <label>Parent name</label>
+          <p>Parent name</p>
           <div className="form-inline">
             <div className="form-with-label">
               <input
@@ -91,14 +91,15 @@ export default function StudentRegister() {
                 }
                 type="name"
                 className="form-control "
-                name="master"
+                name="parent-firstname"
               />
-              <span> first name</span>
+              <label htmlFor="parent-firstname"> first name</label>
             </div>
             <div className="form-with-label">
               <input
                 type="name"
                 className="form-control"
+                name="parent-lastname"
                 value={parentName.lastname}
                 onChange={(e) =>
                   setParentName({
@@ -107,7 +108,7 @@ export default function StudentRegister() {
                   })
                 }
               />
-              <span>last name</span>
+              <label htmlFor="parent-lastname">last name</label>
             </div>
           </div>
         </div>
@@ -130,13 +131,13 @@ export default function StudentRegister() {
           />
         </div>
         <div className="form-group">
-          <label>Student name</label>
+          <p>Student name</p>
           <div className="form-inline">
             <div className="form-with-label">
               <input
                 type="name"
                 className="form-control "
-                name="master"
+                name="student-firstname"
                 value={studentName.firstname}
                 onChange={(e) =>
                   setStudentName({
@@ -145,12 +146,13 @@ export default function StudentRegister() {
                   })
                 }
               />
-              <span> first name</span>
+              <label htmlFor="student-firstname"> first name</label>
             </div>
             <div className="form-with-label">
               <input
                 type="name"
                 className="form-control"
+                name="student-lastname"
                 value={studentName.lastname}
                 onChange={(e) =>
                   setStudentName({
@@ -159,39 +161,40 @@ export default function StudentRegister() {
                   })
                 }
               />
-              <span>last name</span>
+              <label htmlFor="student-lastname">last name</label>
             </div>
           </div>
         </div>
         <div className="form-group">
-          <label>Address</label>
+          <p>Address</p>
           <div className="form-inline">
             <div className="form-with-label">
               <input
                 type="name"
                 className="form-control "
-                name="master"
+                name="address-address"
                 value={address.address}
                 onChange={(e) =>
                   setAddress({ ...address, address: e.currentTarget.value })
                 }
               />
-              <span>Address </span>
+              <label htmlFor="adress-address">Address </label>
             </div>
             <div className="form-with-label">
               <input
                 type="name"
                 className="form-control"
+                name="address-city"
                 value={address.city}
                 onChange={(e) =>
                   setAddress({ ...address, city: e.currentTarget.value })
                 }
               />
-              <span>City</span>
+              <label htmlFor="address-city">City</label>
             </div>
           </div>
         </div>
-        {error && <span style={{ color: "red" }}>{error}</span>}
+        {error && <span style={{ color: "#AF502C" }}>{error}</span>}
         <div className="button-div">
           {!loading ? (
             <button className="btn left btn-light-blue rounded"> Next</button>
