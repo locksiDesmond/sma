@@ -91,6 +91,7 @@ export default function StudentRegister() {
                 }
                 type="name"
                 className="form-control "
+                placeholder="first name"
                 name="parent-firstname"
               />
               <label htmlFor="parent-firstname"> first name</label>
@@ -99,6 +100,7 @@ export default function StudentRegister() {
               <input
                 type="name"
                 className="form-control"
+                placeholder="last name"
                 name="parent-lastname"
                 value={parentName.lastname}
                 onChange={(e) =>
@@ -117,6 +119,7 @@ export default function StudentRegister() {
           <input
             className="form-control"
             type="email"
+            placeholder="email"
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
           />
@@ -126,6 +129,7 @@ export default function StudentRegister() {
           <input
             className="form-control"
             type="number"
+            placeholder="number"
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.currentTarget.value)}
           />
@@ -138,6 +142,7 @@ export default function StudentRegister() {
                 type="name"
                 className="form-control "
                 name="student-firstname"
+                placeholder="first name"
                 value={studentName.firstname}
                 onChange={(e) =>
                   setStudentName({
@@ -153,6 +158,7 @@ export default function StudentRegister() {
                 type="name"
                 className="form-control"
                 name="student-lastname"
+                placeholder="last name"
                 value={studentName.lastname}
                 onChange={(e) =>
                   setStudentName({
@@ -173,6 +179,7 @@ export default function StudentRegister() {
                 type="name"
                 className="form-control "
                 name="address-address"
+                placeholder="address"
                 value={address.address}
                 onChange={(e) =>
                   setAddress({ ...address, address: e.currentTarget.value })
@@ -185,6 +192,7 @@ export default function StudentRegister() {
                 type="name"
                 className="form-control"
                 name="address-city"
+                placeholder="city"
                 value={address.city}
                 onChange={(e) =>
                   setAddress({ ...address, city: e.currentTarget.value })

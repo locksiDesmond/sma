@@ -4,6 +4,7 @@ body {
   padding: 0;
   font-size: 14px;
   color: #fff;
+  background-color: #f5f6fa;
 }
 input {
   margin: 0;
@@ -131,9 +132,10 @@ button {
 .form-with-label {
   flex-direction: column-reverse;
   display: flex;
+  margin: 0.6rem 0;
 }
 .form-with-label > label {
-  display: block;
+  display: none;
   font-size: 0.8rem;
   margin: 0.4rem 0;
 }
@@ -215,6 +217,8 @@ button {
 }
 .button-div .left {
   margin-left: auto;
+  padding: 0.375rem 2.5rem !important;
+  box-shadow: 1px 1px 2px 1px #142027;
 }
 .btn-group-lg > .btn {
   padding: 0.5rem 1rem;
@@ -223,9 +227,9 @@ button {
   border-radius: 0.3rem;
 }
 .btn-light-blue {
-  color: #173f58;
-  background-color: #ffff;
-  border-color: #fff;
+  color: #000;
+  background-color: #81d2ff;
+  border-color: #81d2ff;
 }
 .btn-lg {
   padding: 0.5rem 8rem;
@@ -234,9 +238,9 @@ button {
   border-radius: 0.3rem;
 }
 .btn-light-blue:hover {
-  color: #fff;
-  background-color: #81d2ff;
-  border-color: #81d2ff;
+  color: #173f58;
+  background-color: #ffff;
+  border-color: #fff;
 }
 
 .btn-light-blue:focus,

@@ -5,7 +5,7 @@ export default function Sma(props) {
   return (
     <div className="App">
       <div className="register">
-        <p>{props.title}</p>
+        <p style={{ color: "#000" }}>{props.title}</p>
         <div className="register-div">{props.children}</div>
       </div>
     </div>

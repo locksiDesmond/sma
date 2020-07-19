@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Sma from "./../../layout/Sma";
-import SelectClass from "../hooks/SelectClass";
-import SelectSubjects from "./../hooks/SelectSubjects";
-import SelectDepartment from "./../hooks/SelectDepartment";
+import SelectClass from "../SelectForms/SelectClass";
+import SelectSubjects from "./../SelectForms/SelectSubjects";
+import SelectDepartment from "./../SelectForms/SelectDepartment";
 import { useLocation, useHistory } from "react-router";
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
